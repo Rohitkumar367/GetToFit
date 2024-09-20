@@ -9,14 +9,16 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div style={{width: '400px', maxWidth: '1488px', margin: 'auto'}}>
+    <Box width="400px" sx={{width: {xl: '1488px'}}} m="auto">
+    {/* <div style={{width: '400px', maxWidth: '1488px', margin: 'auto'}}> */}
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/exercise/:id' element={<ExerciseDetail/>}></Route>
       </Routes>
       <Footer/>
-    </div>
+    {/* </div> */}
+    </Box> 
   )
 }
 
