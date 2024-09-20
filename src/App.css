@@ -1,14 +1,23 @@
-body {
-    font-family: 'Josefin Sans';
-    background-color: #FFFAFB;
-  }
-  
+body{
+  font-family: 'Josefin Sans';
+}
+
 *{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
   
-  }
+}
+
+/* the responsive container starts */
+.responsive-container{
+  width: 100%;
+  border: 1px solid green;
+  margin: 0 auto;
+  background-image: linear-gradient(to top, #fab5a4, #fdeee5);
+  height: 100vh;
+}
+/* the responsive container ends */
   
   ::-webkit-scrollbar {
     width: 0px;
