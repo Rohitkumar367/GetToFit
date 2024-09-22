@@ -14,7 +14,7 @@ body{
   width: 100%;
   border: 1px solid green;
   margin: 0 auto;
-  background-image: linear-gradient(to top, #fab5a4, #fdeee5);
+  background-image: linear-gradient(to top, #ffe7e2, #ffffff);
   height: 100vh;
 }
 /* the responsive container ends */
