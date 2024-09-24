@@ -1,0 +1,62 @@
+.banner-container{
+    border: 1px solid red;
+}
+  
+.fitness-club{
+    color: #FF2625;
+    font-weight: 600;
+    font-size: 26px;
+}
+  
+.banner-title{
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 23px;
+    margin-top: 30px;
+}
+  
+.banner-description{
+    font-size: 22px;
+    line-height: 35px;
+    margin-bottom: 16px;
+}
+  
+.explore-button{
+    background-color: #ff2625;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+  
+.exercise-text{
+    font-weight: 600;
+    color: #ff2625;
+    opacity: 0.1;
+    font-size: 200px;
+}
+  
+.hero-banner-img{
+    width: 700px;
+    height: 900px;
+}
+  
+
+/* Responsiveness */
+@media screen and (min-width: 600px){
+    .banner-container{
+        /* margin-left: 50px; */
+    }
+  
+    .banner-title{
+        font-size: 44px;
+    }
+}
+  
+@media screen and (min-width: 992px){
+    .banner-container{
+        /* margin-top: 212px; */
+    }
+
+}
+  
