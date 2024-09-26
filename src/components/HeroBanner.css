@@ -1,16 +1,18 @@
 @font-face{
     font-family: myFont;
-    src: url(Heatrix.otf)
+    src: url(../fonts/MOONSTONE.otf)
 }
 
 .banner-container{
-    border: 1px solid red;
+    width: 100%;
+    /* border: 1px solid red; */
+    padding-top: 15%;
+    padding-left: 7.5%;
 }
   
 .fitness-club{
     color: #FF2625;
     font-family: myFont;
-    font-weight: 600;
     font-size: 100px;
     letter-spacing: 3px;
 }
@@ -50,9 +52,26 @@
   
 
 /* Responsiveness */
+
+@media screen and (max-width: 992px){
+    .banner-container{
+        /* padding-top: 5rem;
+        padding-left: 2rem; */
+    }
+
+    .fitness-club{
+        color: #FF2625;
+        font-family: myFont;
+        font-size: 70px;
+        letter-spacing: 3px;
+    } 
+
+}
+
+
 @media screen and (min-width: 600px){
     .banner-container{
-        /* margin-left: 50px; */
+
     }
   
     .banner-title{
@@ -60,10 +79,4 @@
     }
 }
   
-@media screen and (min-width: 992px){
-    .banner-container{
-        /* margin-top: 212px; */
-    }
-
-}
   
