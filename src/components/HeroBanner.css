@@ -1,11 +1,18 @@
+@font-face{
+    font-family: myFont;
+    src: url(Heatrix.otf)
+}
+
 .banner-container{
     border: 1px solid red;
 }
   
 .fitness-club{
     color: #FF2625;
+    font-family: myFont;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 100px;
+    letter-spacing: 3px;
 }
   
 .banner-title{

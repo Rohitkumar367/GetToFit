@@ -7,7 +7,7 @@ const HeroBanner = () => {
     return (
         <div className="banner-container">
 
-            <h1 className="fitness-club">Fitness Club</h1>
+            <h1 className="fitness-club">FITNESS CLUB</h1>
 
             <h2 className="banner-title">
                 Sweat, Smile <br /> and Repeat
