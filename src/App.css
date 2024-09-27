@@ -12,7 +12,6 @@ body{
 /* the responsive container starts */
 .responsive-container{
   width: 100%;
-  border: 1px solid green;
   margin: 0 auto;
   background-image: linear-gradient(to top, #ffe7e2, #ffffff);
 }
