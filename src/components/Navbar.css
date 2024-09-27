@@ -34,9 +34,14 @@ body{
 .nav-link{
     text-decoration: none;
     color: #3A1212;
+    transition: all 0.05s ease-out;
 }
 
-.home-link{
+.home-link:hover{
+    border-bottom: 3px solid #FF2625
+}
+
+.exercise-link:hover{
     border-bottom: 3px solid #FF2625
 }
 
@@ -48,8 +53,12 @@ body{
         gap: 10px;
     }
 
-    .home-link{
+    .home-link:hover{
         border-bottom: 2px solid #FF2625;
+    }
+
+    .exercise-link:hover{
+        border-bottom: 2px solid #FF2625
     }
 }
 
@@ -63,8 +72,12 @@ body{
         gap: 8px;
     }
 
-    .home-link{
+    .home-link:hover{
         border-bottom: 1px solid #FF2625;
+    }
+
+    .exercise-link:hover{
+        border-bottom: 1px solid #FF2625
     }
 }
 
@@ -78,7 +91,11 @@ body{
         gap: 5px;
     }
 
-    .home-link{
+    .home-link:hover{
         border-bottom: 0.1px solid #FF2625;
+    }
+
+    .exercise-link:hover{
+        border-bottom: 0.1px solid #FF2625
     }
 }
