@@ -7,11 +7,11 @@ import Exercises from '../components/Exercises'
 
 const Home = () => {
     return (
-        <Box>
+        <div>
             <HeroBanner/>
             <SearchExercises/>
             <Exercises/>
-        </Box>
+        </div>
     )
 }
 
