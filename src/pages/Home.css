@@ -1,0 +1,11 @@
+
+.exercise-text{
+    position: absolute;
+    font-weight: 600;
+    /* border: 1px solid green; */
+    top: 30vw;
+    left: 15vw;
+    color: #ff2625;
+    opacity: 0.1;
+    font-size: 15vw;
+}
