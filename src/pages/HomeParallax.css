@@ -1,4 +1,10 @@
 
+.parallax-container{
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .exercise-text{
     position: absolute;
     font-weight: 600;

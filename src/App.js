@@ -7,11 +7,11 @@ import HomeNormal from './pages/HomeNormal'
 
 const App = () => {
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 500);
+      setIsMobile(window.innerWidth <= 500);
     }
 
     window.addEventListener('resize', handleResize);
