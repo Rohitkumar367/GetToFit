@@ -1,6 +1,7 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import Navbar from '../components/Navbar'
 import HeroBanner from '../components/HeroBanner'
+import backgroundCutting from '../assets/images/backgroundCutting.png'
 import './HomeParallax.css'
 
 const HomeParallax = () => {
@@ -16,9 +17,6 @@ const HomeParallax = () => {
                     // border: "5px solid green"
                 }}
             >
-                <div>
-                    <HeroBanner/>
-                </div>
             </ParallaxLayer>
 
             <ParallaxLayer offset={0} speed={0.3}
@@ -36,18 +34,48 @@ const HomeParallax = () => {
                 style={{
                     backgroundColor: "transparent",
                     width: "100vw",
+                    height: "10vw",
+                    zIndex: 1,
                     // border: "5px solid green"
                 }}
             >
                 <Navbar/>
             </ParallaxLayer>
 
+            <ParallaxLayer offset={0.76} speed={0.05}
+                style={{
+                    backgroundImage: `url(${backgroundCutting})`,
+                    backgroundSize: 'contain',
+                    opacity: 0.4,
+                }}
+            >
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0.8} speed={0.1}
+                style={{
+                    backgroundImage: `url(${backgroundCutting})`,
+                    backgroundSize: 'contain',
+                }}
+            >
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0} speed={0}
+                style={{
+                    height: "100vh",
+                    background: "transparent",
+                }}
+            >
+                <div>
+                    <HeroBanner/>
+                </div>
+            </ParallaxLayer>
+
             <ParallaxLayer offset={1} speed={0}
                 style={{
-                    // top: "50vw",
                     backgroundColor: "#FF2625"
                 }}
             >
+                sdf
             </ParallaxLayer>
 
         </Parallax>
