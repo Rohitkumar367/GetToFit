@@ -1,9 +1,9 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import Navbar from '../components/Navbar'
 import HeroBanner from '../components/HeroBanner'
-import './Home.css'
+import './HomeParallax.css'
 
-const Home = () => {
+const HomeParallax = () => {
 
     return (
     <div >
@@ -56,4 +56,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default HomeParallax
