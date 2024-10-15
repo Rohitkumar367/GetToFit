@@ -5,6 +5,7 @@ import backgroundCutting from '../assets/images/backgroundCutting.png'
 import banner from '../assets/images/banner.png'
 import bannerBorder2 from '../assets/images/bannerBorder2.png'
 import './HomeParallax.css'
+import SearchExercises from '../components/SearchExercises'
 
 const HomeParallax = () => {
 
@@ -32,7 +33,7 @@ const HomeParallax = () => {
                 <Navbar/>
             </ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={-0.2} horizontal>
+            <ParallaxLayer offset={0} speed={-0.2}>
                 <div
                     style={{
                         position: "relative",
@@ -77,7 +78,7 @@ const HomeParallax = () => {
                 </p>
             </ParallaxLayer>
 
-            <ParallaxLayer offset={0.78} speed={0.05}
+            <ParallaxLayer offset={0.87} speed={0.05}
                 style={{
                     backgroundImage: `url(${backgroundCutting})`,
                     backgroundSize: 'contain',
@@ -85,7 +86,14 @@ const HomeParallax = () => {
                 }}
             ></ParallaxLayer>
 
-            <ParallaxLayer offset={0.85} speed={0.1}
+            <ParallaxLayer offset={0.93} speed={0}
+                style={{
+                    backgroundImage: `url(${backgroundCutting})`,
+                    backgroundSize: 'contain',
+                }}
+            ></ParallaxLayer>
+
+            <ParallaxLayer offset={0.93} speed={0.2}
                 style={{
                     backgroundImage: `url(${backgroundCutting})`,
                     backgroundSize: 'contain',
@@ -103,12 +111,12 @@ const HomeParallax = () => {
                 </div>
             </ParallaxLayer>
 
-            <ParallaxLayer offset={1.1} speed={0}
+            <ParallaxLayer offset={1.1} speed={0.15}
                 style={{
                     backgroundColor: "#FF2625"
                 }}
             >
-                sdf
+                <SearchExercises/>
             </ParallaxLayer>
 
         </Parallax>
