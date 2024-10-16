@@ -23,22 +23,22 @@
   
 .banner-title{
     font-weight: 700;
-    font-size: 3vw; /* 40px */
+    font-size: 2.5vw; /* 40px */
     margin-bottom: 1vw;
     margin-top: 2.5vw;
 }
   
 .banner-description{
-    font-size: 2vw; /* 22px */
+    font-size: 1.8vw; /* 22px */
     line-height: 2.5vw; /* 35px */
     margin-bottom: 1vw; /* 16px */
 }
   
 .explore-button{
     background-color: #ff2625;
-    padding: 1vw;
+    padding: 0.8vw;
     color: white;
-    font-size: 1vw;
+    font-size: 0.8vw;
     border: none;
     cursor: pointer;
     letter-spacing: .09vw;
@@ -47,11 +47,6 @@
 
 .explore-button:hover{
     background-color: #fc5d5d;
-}
-  
-.hero-banner-img{
-    width: 700px;
-    height: 900px;
 }
   
 

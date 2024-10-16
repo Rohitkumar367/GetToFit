@@ -2,16 +2,17 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import Navbar from '../components/Navbar'
 import HeroBanner from '../components/HeroBanner'
 import backgroundCutting from '../assets/images/backgroundCutting.png'
+import cuttingBottom from '../assets/images/cuttingBottom.png'
 import banner from '../assets/images/banner.png'
 import bannerBorder2 from '../assets/images/bannerBorder2.png'
 import './HomeParallax.css'
-import SearchExercises from '../components/SearchExercises'
+import ParallaxContent from '../components/ParallaxContent'
 
 const HomeParallax = () => {
 
     return (
     <div >
-        <Parallax pages={2.1} className='parallax-container' style={{display: "block"}}>
+        <Parallax pages={2.6} className='parallax-container' style={{display: "block"}}>
 
             <ParallaxLayer offset={0} speed={0}
                 style={{
@@ -37,8 +38,8 @@ const HomeParallax = () => {
                 <div
                     style={{
                         position: "relative",
-                        top:"40vh",
-                        left: "54vw",
+                        top:"30vh",
+                        left: "56vw",
                         width: "45vw",
                         height: "60vw",
                         backgroundColor: "transparent",
@@ -54,7 +55,7 @@ const HomeParallax = () => {
                 <div
                     style={{
                         position: "relative",
-                        top:"25vh",
+                        top:"20vh",
                         left: "57vw",
                         width: "45vw",
                         height: "60vw",
@@ -67,7 +68,7 @@ const HomeParallax = () => {
             </ParallaxLayer>
 
 
-            <ParallaxLayer offset={0} speed={0.3}
+            <ParallaxLayer offset={0.05} speed={0.3}
                 style={{
                     backgroundColor: "transparent",
                     // border: "5px solid green"
@@ -86,7 +87,7 @@ const HomeParallax = () => {
                 }}
             ></ParallaxLayer>
 
-            <ParallaxLayer offset={0.93} speed={0}
+            <ParallaxLayer offset={0.97} speed={0.1}
                 style={{
                     backgroundImage: `url(${backgroundCutting})`,
                     backgroundSize: 'contain',
@@ -100,6 +101,30 @@ const HomeParallax = () => {
                 }}
             ></ParallaxLayer>
 
+            <ParallaxLayer offset={0} speed={0.2}
+                style={{
+                    height: "292vh",
+                    position: "relative",
+                }}
+            >
+                <div
+                    style={{
+                        position:"absolute",
+                        bottom: "-4vw",
+                        backgroundColor: "transparent",
+                        border: '2px solid black',
+                        width: "100vw",
+                        height: "39vw",
+                    }}
+                >
+                    <img src={cuttingBottom} alt='cutting_image' 
+                        style={{
+                            width: "100%",
+                        }}
+                    />
+                </div>
+            </ParallaxLayer>
+
             <ParallaxLayer offset={0} speed={0}
                 style={{
                     height: "100vh",
@@ -111,12 +136,15 @@ const HomeParallax = () => {
                 </div>
             </ParallaxLayer>
 
-            <ParallaxLayer offset={1.1} speed={0.15}
+            <ParallaxLayer speed={0.15}
                 style={{
+                    top: "120vh",
+                    border: '2px solid yellow',
+                    height: "140vh",
                     backgroundColor: "#FF2625"
                 }}
             >
-                <SearchExercises/>
+                <ParallaxContent/>
             </ParallaxLayer>
 
         </Parallax>
