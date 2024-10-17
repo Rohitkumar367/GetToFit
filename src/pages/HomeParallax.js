@@ -139,7 +139,7 @@ const HomeParallax = () => {
             <ParallaxLayer speed={0.15}
                 style={{
                     top: "120vh",
-                    border: '2px solid yellow',
+                    // border: '2px solid yellow',
                     height: "140vh",
                     backgroundColor: "#FF2625"
                 }}
