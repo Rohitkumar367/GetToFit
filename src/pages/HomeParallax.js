@@ -12,7 +12,7 @@ const HomeParallax = () => {
 
     return (
     <div >
-        <Parallax pages={2.6} className='parallax-container' style={{display: "block"}}>
+        <Parallax pages={2.25} className='parallax-container' style={{display: "block"}}>
 
             <ParallaxLayer offset={0} speed={0}
                 style={{
@@ -103,7 +103,7 @@ const HomeParallax = () => {
 
             <ParallaxLayer offset={0} speed={0.2}
                 style={{
-                    height: "292vh",
+                    height: "250vh",
                     position: "relative",
                 }}
             >
@@ -138,9 +138,9 @@ const HomeParallax = () => {
 
             <ParallaxLayer speed={0.15}
                 style={{
-                    top: "120vh",
+                    top: "115vh",
                     // border: '2px solid yellow',
-                    height: "140vh",
+                    height: "110vh",
                     backgroundColor: "#FF2625"
                 }}
             >

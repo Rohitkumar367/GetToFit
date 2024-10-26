@@ -25,7 +25,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={ isMobile ? <HomeNormal/> : <HomeParallax/>}></Route>
+        {/* <Route path="/" element={ isMobile ? <HomeNormal/> : <HomeParallax/>}></Route> */}
+        <Route path='/' element={<HomeParallax/>}></Route>
         <Route path='/exercise/:id' element={<ExerciseDetail/>}></Route>
       </Routes>
     </BrowserRouter>

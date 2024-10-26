@@ -3,10 +3,13 @@
     src: url(../fonts/BRIGHTSTER-Bold.otf)
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
 .parallaxContent{
     border: 2px solid white;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .punchline{
@@ -33,22 +36,46 @@
 
 .introduction{
     border: 2px solid green;
+    width: 80%;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 3vw;
 }
 
 .introImage{
     border: 2px solid white;
-    width: 40vw;
+    margin-bottom: 20px;
+}
+
+.introImage img{
+    width: 50vh;
 }
 
 .introContent{
     border: 2px solid white;
-    width: 40vw;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.introImage img{
-    width: 40vw;
+.introPara{
+    border: 2px solid black;
+    font-size: 2.5vh;
+    font-weight: 100;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+.introPara span{
+    font-size: 4vh;
+    font-weight: 700;
+    color: black;
+}
+
+@media (max-width: 500px) {
+
 }

@@ -52,7 +52,7 @@
 
 /* Responsive starts */
 @media (max-width: 500px) {
-    .banner-container{
+    /* .banner-container{
         padding-left: 0;
         display: flex;
         flex-direction: column;
@@ -61,10 +61,10 @@
     }
 
     .banner-description{
-        font-size: 2vw; /* 22px */
+        font-size: 2vw;
         line-height: 2.5vw;
         margin-bottom: -2px;
-    }
+    } */
 }
   
   
