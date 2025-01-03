@@ -16,7 +16,7 @@ const HomeParallax = () => {
 
             <ParallaxLayer offset={0} speed={0}
                 style={{
-                    height: "110vh",
+                    height: "120vh",
                     backgroundImage: "linear-gradient(to top, #ffe7e2, #ffffff)",
                     // border: "5px solid green"
                 }}
@@ -139,7 +139,7 @@ const HomeParallax = () => {
             <ParallaxLayer speed={0.15}
                 style={{
                     top: "115vh",
-                    // border: '2px solid yellow',
+                    border: '2px solid yellow',
                     height: "110vh",
                     backgroundColor: "#FF2625"
                 }}

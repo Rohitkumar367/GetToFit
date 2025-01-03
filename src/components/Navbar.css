@@ -1,12 +1,11 @@
-
-body{
+body {
     font-family: sans-serif;
 }
 
-.navbar-container{
+.navbar-container {
     display: flex;
-    /* border: 1px solid red; */
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     margin-top: 10px;
     width: 100%;
@@ -16,85 +15,140 @@ body{
     background-color: white;
 }
 
-.logo{
+.logo {
     width: 4vw;
     height: 4vw;
 }
 
-.nav-links{
+.nav-links {
     display: flex;
     flex-direction: row;
     gap: 30px;
-    font-size: 15px; 
+    font-size: 15px;
     align-items: flex-end;
     margin-right: 5px;
 }
 
-.nav-link{
+.nav-link {
     text-decoration: none;
     color: #3A1212;
     transition: all 0.05s ease-out;
 }
 
-.home-link:hover{
-    border-bottom: 3px solid #FF2625
+.home-link:hover {
+    border-bottom: 3px solid #FF2625;
 }
 
-.exercise-link:hover{
-    border-bottom: 3px solid #FF2625
+.exercise-link:hover {
+    border-bottom: 3px solid #FF2625;
 }
 
-
-/* Responsive starts */
+/* For screens with a max-width of 1000px */
 @media (max-width: 1000px) {
-    .nav-links{
-        font-size: 12px;
-        gap: 10px;
+    .navbar-container {
+        padding: 1vw 1.5vw;
     }
 
-    .home-link:hover{
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .home-link:hover {
         border-bottom: 2px solid #FF2625;
     }
-
-    .exercise-link:hover{
-        border-bottom: 2px solid #FF2625
+    
+    .exercise-link:hover {
+        border-bottom: 2px solid #FF2625;
     }
 }
 
+/* For screens with a max-width of 600px */
 @media (max-width: 600px) {
-    .navbar-container{
-        border-radius: 5px;
+    .navbar-container {
+        padding: 1vw 2vw;
     }
 
-    .nav-links{
-        font-size: 9px;
-        gap: 8px;
+    .nav-links {
+        gap: 15px;
     }
 
-    .home-link:hover{
+    .nav-link {
+        font-size: 10px;
+    }
+}
+
+/* For screens with a max-width of 230px */
+@media (max-width: 300px) {
+    .navbar-container {
+        padding: 0 4vw;
+    }
+
+    .logo {
+        width: 20px;
+        height: 20px;
+    }
+    .nav-link {
+        font-size: 8px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 7px;
+        display: none; /* Hide menu by default */
+    }
+
+    .home-link:hover {
+        border-bottom: 1px solid #FF2625;
+    }
+    
+    .exercise-link:hover {
         border-bottom: 1px solid #FF2625;
     }
 
-    .exercise-link:hover{
-        border-bottom: 1px solid #FF2625
-    }
-}
-
-@media (max-width: 230px) {
-    .navbar-container{
-        border-radius: 2px;
+    .nav-links.open {
+        position: relative;
+        background-color: white;
+        top: 5vw;
+        display: flex; /* Show menu when open */
     }
 
-    .nav-links{
-        font-size: 7px;
-        gap: 5px;
+    /* Hamburger menu style */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        width: 20px;
+        height: 12px;
+        cursor: pointer;
+    }
+    
+    .hamburger.open{
+        position: relative;
+        right: -30px;
     }
 
-    .home-link:hover{
-        border-bottom: 0.1px solid #FF2625;
+    .line {
+        width: 100%;
+        height: 2px;
+        background-color: #3A1212;
+        transition: transform 0.3s ease;
     }
 
-    .exercise-link:hover{
-        border-bottom: 0.1px solid #FF2625
+    .line.open:nth-child(1) {
+        transform: rotate(45deg) translateY(7px);
+    }
+
+    .line.open:nth-child(2) {
+        opacity: 0;
+    }
+
+    .line.open:nth-child(3) {
+        transform: rotate(-45deg) translateY(-7px);
     }
 }
