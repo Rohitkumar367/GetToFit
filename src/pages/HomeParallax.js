@@ -20,18 +20,6 @@ const HomeParallax = () => {
                 }}
             ></ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={0}
-                style={{
-                    backgroundColor: "transparent",
-                    width: "100vw",
-                    height: "10vw",
-                    zIndex: 1,
-                    // border: "2px solid green"
-                }}
-            >
-                <Navbar/>
-            </ParallaxLayer>
-
             <ParallaxLayer offset={0} speed={-0.2}>
                 <div
                     className='border-part-fitnessGirl'

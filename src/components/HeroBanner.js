@@ -1,5 +1,6 @@
 import React from 'react'
 import './HeroBanner.css'
+import { Link } from 'react-router-dom'
 
 const HeroBanner = () => {
     return (
@@ -13,9 +14,9 @@ const HeroBanner = () => {
 
             <p className="banner-description">Check out the most effective exercises</p>
 
-            <a href="#exercises">
+            <Link to="/mainpage">
                 <button className="explore-button">Explore Exercises</button>
-            </a>
+            </Link>
         </div>
     )
 }

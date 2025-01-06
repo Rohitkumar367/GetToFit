@@ -4,6 +4,8 @@ import ExerciseDetail from './pages/ExerciseDetail'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomeParallax from './pages/HomeParallax'
 import HomeNormal from './pages/HomeNormal'
+import MainPage from './pages/MainPage'
+import Navbar from './components/Navbar'
 
 const App = () => {
 
@@ -24,10 +26,11 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <Navbar/>
       <Routes>
-        <Route path="/" element={ isMobile ? <HomeNormal/> : <HomeParallax/>}></Route>
-        <Route path='/' element={<HomeParallax/>}></Route>
+        <Route path='/' element={ isMobile ? <HomeNormal/> : <HomeParallax/>}></Route>
         <Route path='/exercise/:id' element={<ExerciseDetail/>}></Route>
+        <Route path='/mainpage' element={<MainPage/>} ></Route>
       </Routes>
     </BrowserRouter>
   )

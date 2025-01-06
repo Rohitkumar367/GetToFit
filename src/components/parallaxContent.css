@@ -135,7 +135,7 @@
     
     .introPara{
         /* border: 2px solid black; */
-        font-size: 1.5vh;
+        font-size: 1.2vh;
         font-weight: 100;
         font-family: 'Oswald';
         text-transform: uppercase;
@@ -144,7 +144,7 @@
     }
     
     .introPara span{
-        font-size: 2vh;
+        font-size: 1.5vh;
         font-weight: 700;
         color: black;
     }
