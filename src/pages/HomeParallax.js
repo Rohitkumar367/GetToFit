@@ -3,8 +3,6 @@ import Navbar from '../components/Navbar'
 import HeroBanner from '../components/HeroBanner'
 import backgroundCutting from '../assets/images/backgroundCutting.png'
 import cuttingBottom from '../assets/images/cuttingBottom.png'
-import banner from '../assets/images/banner.png'
-import bannerBorder2 from '../assets/images/bannerBorder2.png'
 import './HomeParallax.css'
 import ParallaxContent from '../components/ParallaxContent'
 
@@ -28,7 +26,7 @@ const HomeParallax = () => {
                     width: "100vw",
                     height: "10vw",
                     zIndex: 1,
-                    // border: "5px solid green"
+                    // border: "2px solid green"
                 }}
             >
                 <Navbar/>
@@ -36,34 +34,13 @@ const HomeParallax = () => {
 
             <ParallaxLayer offset={0} speed={-0.2}>
                 <div
-                    style={{
-                        position: "relative",
-                        top:"30vh",
-                        left: "56vw",
-                        width: "45vw",
-                        height: "60vw",
-                        backgroundColor: "transparent",
-                        backgroundImage: `url(${bannerBorder2})`,
-                        backgroundSize: 'contain',
-                        backgroundRepeat: "no-repeat",
-                        opacity: 0.5
-                    }}
+                    className='border-part-fitnessGirl'
                 ></div>
             </ParallaxLayer>
 
             <ParallaxLayer offset={0} speed={0.1}>
                 <div
-                    style={{
-                        position: "relative",
-                        top:"20vh",
-                        left: "57vw",
-                        width: "45vw",
-                        height: "60vw",
-                        backgroundColor: "transparent",
-                        backgroundImage: `url(${banner})`,
-                        backgroundSize: 'contain',
-                        backgroundRepeat: "no-repeat"
-                    }}
+                    className='full-part-fitnessGirl'
                 ></div>
             </ParallaxLayer>
 
@@ -139,7 +116,7 @@ const HomeParallax = () => {
             <ParallaxLayer speed={0.15}
                 style={{
                     top: "115vh",
-                    border: '2px solid yellow',
+                    // border: '2px solid yellow',
                     height: "110vh",
                     backgroundColor: "#FF2625"
                 }}

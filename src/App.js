@@ -7,11 +7,11 @@ import HomeNormal from './pages/HomeNormal'
 
 const App = () => {
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 300);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 500);
+      setIsMobile(window.innerWidth <= 300);
     }
 
     window.addEventListener('resize', handleResize);
@@ -25,7 +25,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={ isMobile ? <HomeNormal/> : <HomeParallax/>}></Route> */}
+        <Route path="/" element={ isMobile ? <HomeNormal/> : <HomeParallax/>}></Route>
         <Route path='/' element={<HomeParallax/>}></Route>
         <Route path='/exercise/:id' element={<ExerciseDetail/>}></Route>
       </Routes>

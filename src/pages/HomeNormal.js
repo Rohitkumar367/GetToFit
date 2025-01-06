@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-
-import Exercises from '../components/Exercises';
-import SearchExercises from '../components/SearchExercises';
 import HeroBanner from '../components/HeroBanner';
 import Navbar from '../components/Navbar';
+import ParallaxContent from '../components/ParallaxContent';
 
 const Home = () => {
 
@@ -11,8 +9,7 @@ const Home = () => {
     <div>
         <Navbar/>
         <HeroBanner/>
-        <SearchExercises/>
-        <Exercises/>
+        <ParallaxContent/>
     </div>
   );
 };
