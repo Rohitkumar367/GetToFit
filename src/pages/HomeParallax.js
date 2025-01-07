@@ -1,5 +1,4 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import Navbar from '../components/Navbar'
 import HeroBanner from '../components/HeroBanner'
 import backgroundCutting from '../assets/images/backgroundCutting.png'
 import cuttingBottom from '../assets/images/cuttingBottom.png'
