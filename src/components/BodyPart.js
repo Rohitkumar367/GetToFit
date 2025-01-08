@@ -1,6 +1,5 @@
 import React from 'react';
 import './BodyPart.css'; // Import the custom CSS file
-import Icon from '../assets/icons/gym.png';
 
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
     return (
@@ -8,11 +7,12 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
             className={`bodyPart-card ${bodyPart === item ? 'active' : ''}`}
             onClick={() => {
                 setBodyPart(item);
-                window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
             }}
         >
-            <img src={Icon} alt="dumbbell" className="bodyPart-icon" />
+            <img src={`${process.env.PUBLIC_URL}/images/${item}.jpeg`} alt="dumbbell" className="bodyPart-img" />
+
             <p className="bodyPart-text">{item}</p>
+
         </div>
     );
 };

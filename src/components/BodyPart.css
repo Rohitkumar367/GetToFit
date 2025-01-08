@@ -4,33 +4,59 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #fff;
     border-bottom-left-radius: 20px;
-    width: 230px;
-    height: 260px;
-    cursor: pointer;
+    width: 300px;
+    height: 350px;
     gap: 47px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: .15s all linear;
+    transition: .3s all linear;
+    opacity: .6;
+    position: relative;
 }
 
-/* Active card styles */
+.bodyPart-card:hover{
+    opacity: 1;
+}
+
 .bodyPart-card.active {
     border-top: 4px solid #FF2625;
 }
 
-/* Icon styles */
-.bodyPart-icon {
-    width: 40px;
-    height: 40px;
+.bodyPart-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: .5s all linear;
 }
 
-/* Text styles */
+
 .bodyPart-text {
     font-size: 24px;
     font-weight: bold;
     font-family: 'Alegreya', sans-serif;
-    color: #3A1212;
+    color: red;
     text-transform: capitalize;
     margin: 0;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    cursor: pointer;
+    transition: 0.2s all linear;
+    opacity: .7;
 }
+
+.bodyPart-text:hover{
+    text-decoration: underline;
+    opacity: .8;
+}
+
+
+@media (max-width: 700px) {
+    .bodyPart-card {
+        width: 200px;
+        height: 250px;
+    }
+  }
+  

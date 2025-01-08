@@ -1,11 +1,11 @@
 import React from 'react'
 import BodyPart from './BodyPart'
-import './HorizontalScrollbar.css'
+import './Parts.css'
 
-const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
+const Parts = ({ data, bodyPart, setBodyPart }) => {
 
     return (
-        <div className="scroll-container">
+        <div className="scroll">
 
             <div className="scroll-content">
                 {data.map((eachItem) => (
@@ -23,4 +23,4 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
     );
 };
 
-export default HorizontalScrollbar
+export default Parts

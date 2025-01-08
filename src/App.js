@@ -6,31 +6,31 @@ import HomeParallax from './pages/HomeParallax'
 import HomeNormal from './pages/HomeNormal'
 import MainPage from './pages/MainPage'
 import Navbar from './components/Navbar'
+import Exercises from './components/Exercises'
 
 const App = () => {
+  const [bodyPart, setBodyPart] = useState('all')
+  const [exercises, setExercises] = useState([])
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 300);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 300);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-
+    setIsMobile(window.innerWidth <= 300)
   }, [])
 
   return (
     <BrowserRouter>
       <Navbar/>
       <Routes>
+
         <Route path='/' element={ isMobile ? <HomeNormal/> : <HomeParallax/>}></Route>
-        <Route path='/exercise/:id' element={<ExerciseDetail/>}></Route>
-        <Route path='/mainpage' element={<MainPage/>} ></Route>
+
+        <Route path='/mainpage' element={<MainPage bodyPart={bodyPart} setExercises={setExercises} setBodyPart={setBodyPart}/>} ></Route>
+
+        <Route path='/exercise' element={<Exercises exercises={exercises} setExercises={setExercises} bodyPart={bodyPart}/>} />
+
+        <Route path='/exercise/:id' element={<ExerciseDetail/>} />
+
       </Routes>
     </BrowserRouter>
   )

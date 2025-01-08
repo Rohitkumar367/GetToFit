@@ -1,8 +1,6 @@
 import React from 'react'
 import { Box,Stack, Typography } from '@mui/material'
 import Pagination from '@mui/material/Pagination'
-
-import { exerciseOptions, fetchData } from '../utils/fetchData'
 import ExerciseCard from './ExerciseCard';
 
 const Exercises = ({exercises, setExcercises, bodyPart}) => {

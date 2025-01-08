@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import './SearchExercises.css'
 import { exerciseOptions, fetchData } from '../utils/fetchData'
-import HorizontalScrollbar from './HorizontalScrollbar'
+import Parts from './Parts'
+import { useNavigate } from 'react-router-dom'
 
 
 const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
 
     const [search, setSearch] = useState('')
     const [bodyParts, setBodyParts] = useState([])
+
+    const navigate = useNavigate();
 
     // fetch category as soos as the pages load
     useEffect(() => {
@@ -20,14 +23,10 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
         fetchExercisesData();
     }, [])
 
-    console.log(bodyParts)
-
     // fetch data as user's input into input field
     const handleSearch = async () =>  {
         if(search){
             const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
-
-            console.log(exercisesData)
 
             const searchedExercises = exercisesData.filter(
                 (exercises) => exercises.name.toLowerCase().includes(search)
@@ -37,6 +36,8 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
             )
             setSearch('');
             setExercises(searchedExercises);
+
+            navigate('/exercise')
         }
     }   
 
@@ -57,7 +58,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
             </div>
 
             <div className='scroll-container'>
-                <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
+                <Parts data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
             </div>
 
         </div>
