@@ -1,0 +1,36 @@
+/* Container styles */
+.bodyPart-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-bottom-left-radius: 20px;
+    width: 230px;
+    height: 260px;
+    cursor: pointer;
+    gap: 47px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: .15s all linear;
+}
+
+/* Active card styles */
+.bodyPart-card.active {
+    border-top: 4px solid #FF2625;
+}
+
+/* Icon styles */
+.bodyPart-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Text styles */
+.bodyPart-text {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Alegreya', sans-serif;
+    color: #3A1212;
+    text-transform: capitalize;
+    margin: 0;
+}

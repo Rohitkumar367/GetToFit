@@ -6,6 +6,7 @@ import Exercises from '../components/Exercises'
 const MainPage = () => {
     const [bodyPart, setBodyPart] = useState('all')
     const [exercises, setExercises] = useState([])
+    
     return (
         <Box>
             <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart}/>

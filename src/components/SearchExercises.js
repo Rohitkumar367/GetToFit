@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './SearchExercises.css'
 import { exerciseOptions, fetchData } from '../utils/fetchData'
-import { Box } from '@mui/material'
 import HorizontalScrollbar from './HorizontalScrollbar'
 
 
@@ -10,6 +9,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
     const [search, setSearch] = useState('')
     const [bodyParts, setBodyParts] = useState([])
 
+    // fetch category as soos as the pages load
     useEffect(() => {
         const fetchExercisesData = async () => {
             const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
@@ -22,6 +22,7 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
 
     console.log(bodyParts)
 
+    // fetch data as user's input into input field
     const handleSearch = async () =>  {
         if(search){
             const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
@@ -41,7 +42,9 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
 
     return (
         <div className="stack">
+
             <h1 className="title">Awesome Exercises You Should Know</h1>
+
             <div className="search-box">
                 <input
                     value={search}
@@ -52,9 +55,11 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
                 />
                 <button onClick={handleSearch} className="search-btn">Search</button>
             </div>
-            <Box sx={{position: 'relative', width: '100%', p:'20px'}}>
+
+            <div className='scroll-container'>
                 <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
-            </Box>
+            </div>
+
         </div>
     )
 }

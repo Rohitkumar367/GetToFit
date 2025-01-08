@@ -7,8 +7,9 @@ export const exerciseOptions = {
     }
 };
 
-export const fetchData = async(URL, options) => {
-    const response = await fetch(URL, options);
+export const fetchData = async(URL, options, limit=0, offset=0) => {
+    const paginatedURL = `${URL}?limit=${limit}&offset=${offset}`;
+    const response = await fetch(paginatedURL, options);
     const data = await response.json();
 
     return data;
