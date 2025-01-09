@@ -25,9 +25,9 @@ const App = () => {
 
         <Route path='/' element={ isMobile ? <HomeNormal/> : <HomeParallax/>}></Route>
 
-        <Route path='/mainpage' element={<MainPage bodyPart={bodyPart} setExercises={setExercises} setBodyPart={setBodyPart}/>} ></Route>
+        <Route path='/exercise' element={<MainPage bodyPart={bodyPart} setExercises={setExercises} setBodyPart={setBodyPart}/>} ></Route>
 
-        <Route path='/exercise' element={<Exercises exercises={exercises} setExercises={setExercises} bodyPart={bodyPart}/>} />
+        <Route path='/exercise/:search' element={<Exercises exercises={exercises} setExercises={setExercises} bodyPart={bodyPart}/>} />
 
         <Route path='/exercise/:id' element={<ExerciseDetail/>} />
 

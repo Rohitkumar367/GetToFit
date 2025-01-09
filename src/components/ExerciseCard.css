@@ -1,0 +1,81 @@
+.exercise-card {
+    width: 325px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease;
+    /* text-align: center; */
+    display: inline-block;
+}
+
+.exercise-card:hover {
+    transform: scale(1.05);
+}
+
+.exercise-card img {
+    width: 100%;
+    height: 375px;
+    object-fit: cover;
+}
+
+.exercise-card__info {
+    display: flex;
+    margin-left: 20px;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.exercise-card__btn {
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+}
+
+.exercise-card__btn.body-part {
+    background-color: #FFA9A9;
+    color: white;
+    transition: .2s all linear;
+}
+
+.exercise-card__btn.body-part:hover {
+    background-color: white;
+    color: #FFA9A9;
+    transform: scale(1.05);
+}
+
+.exercise-card__btn.target {
+    background-color: #FCC757;
+    color: white;
+    transition: .2s all linear;
+}
+
+.exercise-card__btn.target:hover {
+    background-color: White;
+    color: #FCC757;
+    transform: scale(1.05);
+}
+
+.exercise-card__title {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-left: 20px;
+}
+
+
+@media (max-width: 700px) {
+    .exercise-card {
+        width: 225px;
+    }
+
+    .exercise-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+}

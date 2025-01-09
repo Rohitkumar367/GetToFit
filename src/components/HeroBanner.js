@@ -14,7 +14,7 @@ const HeroBanner = () => {
 
             <p className="banner-description">Check out the most effective exercises</p>
 
-            <Link to="/mainpage">
+            <Link to="/exercise">
                 <button className="explore-button">Explore Exercises</button>
             </Link>
         </div>

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import Spinner from './Spinner'
 
 
-const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
+const SearchExercises = ({bodyPart, setBodyPart}) => {
 
     const [search, setSearch] = useState('')
     const [bodyParts, setBodyParts] = useState([])
@@ -30,18 +30,9 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
     // fetch data as user's input into input field
     const handleSearch = async () =>  {
         if(search){
-            const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
-
-            const searchedExercises = exercisesData.filter(
-                (exercises) => exercises.name.toLowerCase().includes(search)
-                || exercises.target.toLowerCase().includes(search)
-                || exercises.equipment.toLowerCase().includes(search)
-                || exercises.bodyPart.toLowerCase().includes(search)
-            )
+            const encodedSearch = encodeURIComponent(search.trim());
+            navigate(`/exercise/${encodedSearch}`);
             setSearch('');
-            setExercises(searchedExercises);
-
-            navigate('/exercise')
         }
     }   
 
