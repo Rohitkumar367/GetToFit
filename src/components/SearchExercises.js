@@ -3,21 +3,25 @@ import './SearchExercises.css'
 import { exerciseOptions, fetchData } from '../utils/fetchData'
 import Parts from './Parts'
 import { useNavigate } from 'react-router-dom'
+import Spinner from './Spinner'
 
 
 const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
 
     const [search, setSearch] = useState('')
     const [bodyParts, setBodyParts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     const navigate = useNavigate();
 
     // fetch category as soos as the pages load
     useEffect(() => {
+
         const fetchExercisesData = async () => {
             const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
 
             setBodyParts(['all', ...bodyPartsData])
+            setIsLoading(false);
         }
         
         fetchExercisesData();
@@ -40,6 +44,10 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
             navigate('/exercise')
         }
     }   
+
+    if(isLoading){
+        return <Spinner/>
+    }
 
     return (
         <div className="stack">
