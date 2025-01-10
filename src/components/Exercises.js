@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Box,Stack, Typography } from '@mui/material'
-import Pagination from '@mui/material/Pagination'
 import ExerciseCard from './ExerciseCard';
 import { useParams } from 'react-router-dom';
 import { fetchData, exerciseOptions } from '../utils/fetchData';
 import Spinner from './Spinner';
+import Pagination from './Pagination';
 
 const Exercises = ({exercises, setExercises}) => {
     const {search} = useParams();
@@ -40,7 +40,7 @@ const Exercises = ({exercises, setExercises}) => {
     const indexOfFirstExercise = indexOfLastExercise-exercisePerPage;
     const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
 
-    const paginate =(e, value)=>{
+    const handlePageChange =(value)=>{
         setCurrentPage(value);
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
@@ -65,19 +65,14 @@ const Exercises = ({exercises, setExercises}) => {
                 ))}
             </Stack>
 
-            <Stack sx={{ mt: { lg: '114px', xs: '70px' } }} alignItems="center">
-                {exercises.length > 9 && (
-                    <Pagination
-                        color='standard'
-                        shape='rounded'
-                        defaultPage={1}
-                        count={Math.ceil(exercises.length/exercisePerPage)}
-                        page={currentPage}
-                        onChange={paginate}
-                        size="large"
-                    />
-                )}
-            </Stack>
+            {exercises.length > 9 && (
+                <Pagination
+                    totalExercise={exercises.length}
+                    exercisePerPage={exercisePerPage}
+                    currentPage={currentPage}
+                    handlePageChange={handlePageChange}
+                />
+            )}
         </Box>
     )
 }
