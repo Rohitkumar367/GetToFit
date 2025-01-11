@@ -1,12 +1,14 @@
 import React from 'react';
-import './BodyPart.css'; // Import the custom CSS file
+import './BodyPart.css'; 
 import { useNavigate } from 'react-router-dom';
 
-const BodyPart = ({ item, setBodyPart, bodyPart }) => {
+const BodyPart = ({ item, setBodyPart, bodyPart, setChange}) => {
     const navigate = useNavigate()
+    
     const handleSearch = async () =>  {
         setBodyPart(item);
         if(item){
+            setChange(item)
             if(item==="all"){
                 navigate('/exercise/all')
             }

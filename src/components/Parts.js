@@ -2,7 +2,7 @@ import React from 'react'
 import BodyPart from './BodyPart'
 import './Parts.css'
 
-const Parts = ({ data, bodyPart, setBodyPart }) => {
+const Parts = ({ data, bodyPart, setBodyPart, setChange }) => {
 
     return (
         <div className="scroll">
@@ -14,7 +14,7 @@ const Parts = ({ data, bodyPart, setBodyPart }) => {
                         className="scroll-item"
                         title={eachItem.id || eachItem}
                     >
-                        <BodyPart item={eachItem} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+                        <BodyPart item={eachItem} bodyPart={bodyPart} setBodyPart={setBodyPart} setChange={setChange}/>
                     </div>
                 ))}
             </div>

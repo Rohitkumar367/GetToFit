@@ -1,10 +1,14 @@
 import React from 'react' 
-import { Link } from 'react-router-dom'
+import { Link,useParams } from 'react-router-dom'
 import './ExerciseCard.css'
 
-const ExerciseCard = ({exercise}) => {
+const ExerciseCard = ({exercise, setChange}) => {
+    const {search} = useParams();
+    const handleClick = () => {
+        setChange(exercise.id);
+    }
     return (
-        <Link className="exercise-card" to={`/exercise/${exercise.id}`}>
+        <Link onClick={handleClick} className="exercise-card" to={`/exercise/${search}/${exercise.id}`}>
 
             <img src={exercise.gifUrl} alt={exercise.name} className="exercise-card__img" loading="lazy" />
             

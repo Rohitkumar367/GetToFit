@@ -1,0 +1,44 @@
+/* HorizontalScrollbar.css */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+}
+  
+.slider-content {
+    padding: 0 10px;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+  
+.slider-nav-left,
+.slider-nav-right {
+    border: none;
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    font-size: 2rem;
+    color: #000;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 152);
+    cursor: pointer;
+    z-index: 2;
+}
+  
+.slider-nav-left {
+    left: 2px;
+}
+  
+.slider-nav-right {
+    right: 2px;
+}
+  
+.slider-nav-left:hover,
+.slider-nav-right:hover {
+    background: rgba(255, 255, 255, 1);
+}
+  

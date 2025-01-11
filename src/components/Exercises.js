@@ -6,13 +6,20 @@ import { fetchData, exerciseOptions } from '../utils/fetchData';
 import Spinner from './Spinner';
 import Pagination from './Pagination';
 
-const Exercises = ({exercises, setExercises}) => {
+const Exercises = ({exercises, setExercises, change, setChange}) => {
     const {search} = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const[currentPage, setCurrentPage] = useState(1);
     const exercisePerPage=9;
 
+    // fetch the desired result as soon as the page loaded
     useEffect(()=>{ 
+
+        if(change!=search){
+            setIsLoading(false);
+            return;
+        }
+
         const fetchExercises = async()=>{
             const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
             
@@ -61,7 +68,7 @@ const Exercises = ({exercises, setExercises}) => {
 
             <Stack direction="row" sx={{gap: {lg: '110px', xs: '50px'}}} flexWrap="wrap" justifyContent="center">
                 {currentExercises.map((exercise, index)=>(
-                    <ExerciseCard key={index} exercise={exercise}/>
+                    <ExerciseCard key={index} exercise={exercise} setChange={setChange}/>
                 ))}
             </Stack>
 

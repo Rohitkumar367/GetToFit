@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Box } from '@mui/material'
 import SearchExercises from '../components/SearchExercises'
 
-const MainPage = ({bodyPart, setExercises, setBodyPart}) => {
+const MainPage = ({bodyPart, setBodyPart, setChange}) => {
     
     return (
         <Box>
-            <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
+            <SearchExercises bodyPart={bodyPart} setBodyPart={setBodyPart} setChange={setChange}/>
         </Box>
     )
 }

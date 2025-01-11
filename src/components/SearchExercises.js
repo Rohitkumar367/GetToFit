@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import Spinner from './Spinner'
 
 
-const SearchExercises = ({bodyPart, setBodyPart}) => {
+const SearchExercises = ({bodyPart, setBodyPart, setChange}) => {
 
     const [search, setSearch] = useState('')
     const [bodyParts, setBodyParts] = useState([])
@@ -14,22 +14,28 @@ const SearchExercises = ({bodyPart, setBodyPart}) => {
 
     const navigate = useNavigate();
 
-    // fetch category as soos as the pages load
+    // fetch category as soon as the pages load
     useEffect(() => {
 
         const fetchExercisesData = async () => {
-            const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
-
-            setBodyParts(['all', ...bodyPartsData])
-            setIsLoading(false);
+            try {
+                const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
+    
+                setBodyParts(['all', ...bodyPartsData])
+                setIsLoading(false);
+            } catch (error) {
+                window.alert("Unable to fetch data!, Request Limit Exceeded");
+                navigate('/');
+            }
         }
         
         fetchExercisesData();
     }, [])
 
-    // fetch data as user's input into input field
+    // navagate to the route where we have to show the results
     const handleSearch = async () =>  {
         if(search){
+            setChange(search)
             const encodedSearch = encodeURIComponent(search.trim());
             navigate(`/exercise/${encodedSearch}`);
             setSearch('');
@@ -57,7 +63,7 @@ const SearchExercises = ({bodyPart, setBodyPart}) => {
             </div>
 
             <div className='scroll-container'>
-                <Parts data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
+                <Parts data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} setChange={setChange}/>
             </div>
 
         </div>

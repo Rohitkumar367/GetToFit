@@ -2,7 +2,6 @@ import React from 'react'
 import './Pagination.css'
 
 const Pagination = ({totalExercise, exercisePerPage, currentPage, handlePageChange}) => {
-
     const totalPages = Math.ceil(totalExercise/exercisePerPage);
     const maxVisiblePages=7;
 
