@@ -3,14 +3,27 @@ import './Pagination.css'
 
 const Pagination = ({totalExercise, exercisePerPage, currentPage, handlePageChange}) => {
 
+    const totalPages = Math.ceil(totalExercise/exercisePerPage);
+    const maxVisiblePages=7;
+
+    const startPage = Math.max(1, currentPage-Math.floor(maxVisiblePages/2));
+    const endPage = Math.min(totalPages, startPage+maxVisiblePages-1)
+
+    const adjustedStartPage = Math.max(1, endPage-maxVisiblePages+1)
+
     let pages = [];
     
-    for(let i=1 ; i<=Math.ceil(totalExercise/exercisePerPage); i++){
+    for(let i=adjustedStartPage ; i<=endPage; i++){
         pages.push(i)
     }
+
     return (
         <div className='pagination'>
-            <button>
+            <button
+                className={`btn ${currentPage===1 ? "btn-prev" : ""}`}
+                disabled={currentPage===1}
+                onClick={()=>handlePageChange(currentPage-1)}
+            >
                 PREV
             </button>
             {
@@ -23,7 +36,11 @@ const Pagination = ({totalExercise, exercisePerPage, currentPage, handlePageChan
                     ) 
                 })
             }
-            <button>
+            <button
+                className={`btn ${currentPage===totalPages ? "btn-next" : ""}`}
+                disabled={currentPage===totalPages}
+                onClick={()=>handlePageChange(currentPage+1)}
+            >
                 NEXT
             </button>
         </div>

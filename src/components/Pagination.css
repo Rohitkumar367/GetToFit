@@ -13,12 +13,33 @@
     font-size: 13px;
     margin: 0 5px;
     border-radius: 6px;
+    border: 1px solid black;
     cursor: pointer;
     transition: all 0.3s ease;
     background: transparent;
     color: black;
     border-color: #eee;
 }
+
+.pagination .btn{
+    width: 50px;
+    border: 2px solid black;
+    transition: .1s all linear;
+}
+.pagination .btn:hover{
+    scale: 1.05;
+}
+
+.pagination .btn.btn-prev{
+    opacity: .3;
+    pointer-events: none;
+}
+
+.pagination .btn.btn-next{
+    opacity: .3;
+    pointer-events: none;
+}
+
 
 .pagination button.active {
     font-weight: 900;
