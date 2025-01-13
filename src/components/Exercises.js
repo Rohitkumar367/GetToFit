@@ -15,11 +15,6 @@ const Exercises = ({exercises, setExercises, change, setChange}) => {
     // fetch the desired result as soon as the page loaded
     useEffect(()=>{ 
 
-        if(change!=search){
-            setIsLoading(false);
-            return;
-        }
-
         const fetchExercises = async()=>{
             const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
             

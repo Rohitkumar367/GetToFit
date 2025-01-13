@@ -11,15 +11,15 @@ const ExerciseDetail = () => {
     const [exerciseVideos, setExerciseVideos] = useState([])
     const [targetMuscleExercises, setTargetMuscleExercises] = useState([]);
     const [equipmentExercises, setEquipmentExercises] = useState([]);
-    const {id} = useParams();
+    const {search, id} = useParams();
 
     useEffect(()=>{
         const fetchExercisesData = async () =>{
             
-            // call for perticular exercise detail
             const exerciseDbUrl = 'https://exercisedb.p.rapidapi.com'
             const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com'
-
+            
+            // call for perticular exercise detail
             const exerciseDetailData = await fetchData(`${exerciseDbUrl}/exercises/exercise/${id}`, exerciseOptions)
             setExerciseDetail(exerciseDetailData)
 
@@ -36,7 +36,7 @@ const ExerciseDetail = () => {
             setEquipmentExercises(equipmentExerciseData)
         }
         fetchExercisesData();
-    }, [id]);
+    }, [search, id]);
 
     return (
         <Box sx={{mt: {lg:'96px', xs:'60px'}}}>

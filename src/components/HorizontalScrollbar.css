@@ -1,44 +1,53 @@
 /* HorizontalScrollbar.css */
-.slider-container {
-    position: relative;
-    overflow: hidden;
-    padding: 25px;
+.swiperRootContainer {
+    padding-top: 20px;
+    padding-left: 10px;
+    border-radius: 25px;
+    width: 98vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 100px;
 }
   
-.slider-content {
+.swiperItemsContainer {
     padding: 0 10px;
     display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-  
-.slider-nav-left,
-.slider-nav-right {
-    border: none;
-    width: 60px;
-    height: 100%;
-    position: absolute;
-    font-size: 2rem;
-    color: #000;
-    top: 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 152);
+    gap: 50px;
+}
+  
+
+.action-btns{
+    position: relative;
+    top: -30px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.action-btns button{
+    font-size: 15px;
+    font-weight: 500;
+    color: #002d36;
+    background-color: pink;
+    border-radius: 6px;
+    padding: 10px 25px;
+    border: none;
     cursor: pointer;
-    z-index: 2;
+    transition: all .5s ease;
 }
-  
-.slider-nav-left {
-    left: 2px;
+
+.action-btns button:hover{
+    color: #ffffff;
+    background-color: #002d36;
 }
-  
-.slider-nav-right {
-    right: 2px;
-}
-  
-.slider-nav-left:hover,
-.slider-nav-right:hover {
-    background: rgba(255, 255, 255, 1);
-}
+
+
   

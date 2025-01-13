@@ -1,43 +1,43 @@
-import React from 'react';
-import { Box } from '@mui/material';
+import React, { useRef, useState } from 'react';
 import ExerciseCard from './ExerciseCard';
-import './HorizontalScrollbar.css'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import './HorizontalScrollbar.css';
+
+const ITEM_WIDTH = 325;
 
 const HorizontalScrollbar = ({ data }) => {
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const containerRef = useRef();
 
-    let box = document.querySelector('.slider-content')
+    const handleScroll = (scrollAmount) => {
+        const newScrollPosition = scrollPosition + scrollAmount;
 
-    const btnPressLeft=()=>{
-        let width = box.clientWidth;
-        box.scrollLeft = box.scrollLeft - width;
-    }
-    
-    const btnPressRight=()=>{
-        let width = box.clientWidth;
-        box.scrollLeft = box.scrollLeft + width;
+        setScrollPosition(newScrollPosition)
+
+        containerRef.current.scrollLeft=newScrollPosition
     }
 
     return (
-        <div className='slide-container'>
+        <div className="swiperRootContainer">
 
-            <div className="slider-nav-left" onClick={btnPressLeft}>
-                <FaChevronLeft/>
-            </div>
-            <div className="slider-nav-right" onClick={btnPressRight
-            }>
-                <FaChevronRight/>
+            <div ref={containerRef}
+                style={{
+                    width: "95vw",
+                    overflowX:"scroll",
+                    scrollBehavior: "smooth"
+                }}
+            >
+                <div className='swiperItemsContainer'>
+                    {data.map((item, index) => (
+                        <div key={index}>
+                            <ExerciseCard exercise={item} />
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            <div className='slider-content'>
-                {data.map((item, index) => (
-                    <Box
-                        key={index}
-                        m="0 40px"
-                    >
-                        <ExerciseCard exercise={item} />
-                    </Box>
-                ))}
+            <div className="action-btns">
+                <button onClick={()=>{handleScroll(-ITEM_WIDTH)}}>Scroll Left</button>
+                <button onClick={()=>{handleScroll(ITEM_WIDTH)}}>Scroll Right</button>
             </div>
 
         </div>
@@ -45,4 +45,3 @@ const HorizontalScrollbar = ({ data }) => {
 };
 
 export default HorizontalScrollbar;
-

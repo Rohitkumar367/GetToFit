@@ -2,13 +2,15 @@ import React from 'react'
 import { Link,useParams } from 'react-router-dom'
 import './ExerciseCard.css'
 
-const ExerciseCard = ({exercise, setChange}) => {
+const ExerciseCard = ({exercise}) => {
     const {search} = useParams();
-    const handleClick = () => {
-        setChange(exercise.id);
+
+    const changeHandler=()=>{
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }
+
     return (
-        <Link onClick={handleClick} className="exercise-card" to={`/exercise/${search}/${exercise.id}`}>
+        <Link onClick={changeHandler} className="exercise-card" to={`/exercise/${search}/${exercise.id}`}>
 
             <img src={exercise.gifUrl} alt={exercise.name} className="exercise-card__img" loading="lazy" />
             
