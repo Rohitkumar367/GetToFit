@@ -1,60 +1,35 @@
 {
-  "name": "fitness_app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.6.1",
-    "@mui/material": "^5.6.1",
-    "@react-spring/parallax": "^9.7.4",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-horizontal-scrolling-menu": "^2.8.2",
-    "react-icons": "^5.4.0",
-    "react-loader-spinner": "^6.1.6",
-    "react-parallax": "^3.5.1",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "react-spring": "^9.7.4",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "full_auth",
+  "version": "1.0.0",
+  "main": "backend/index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "nodemon backend/index.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mailgen": "^2.0.28",
+    "mailtrap": "^3.4.0",
+    "mongoose": "^8.9.2",
+    "nodemailer": "^6.9.16",
+    "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "eslint": "^8.13.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.4.0",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17"
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.7"
   }
 }

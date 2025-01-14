@@ -1,0 +1,97 @@
+.input-container{
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+  
+.input-icon{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 0.75rem;
+    pointer-events: none;
+}
+  
+.input-icon-svg{
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #ef4444;
+}
+  
+.input-field {
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(31, 41, 55, 0.5);
+    border-radius: 0.75rem;
+    border: 1px solid #374151;
+    color: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+  
+.input-field::placeholder {
+    color: #9ca3af;
+}
+  
+.input-field:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 2px rgba(255, 99, 132, 0.5);
+}
+
+
+@media (max-width: 800px) {
+    .input-container{
+        margin-bottom: 10px;
+    }
+      
+    .input-icon{
+        top: 7px;
+        padding-left: 0.55rem;
+    }
+      
+    .input-icon-svg{
+        width: 1rem;
+        height: 1rem;
+        color: #ef4444;
+    }
+      
+    .input-field {
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 0.25rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        font-size: 15px;
+    }
+      
+}
+
+@media (max-width: 500px) {
+    .input-container{
+        margin-bottom: 5px;
+    }
+      
+    .input-icon{
+        top: 7px;
+        padding-left: 0.35rem;
+    }
+      
+    .input-icon-svg{
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+      
+    .input-field {
+        width: 100%;
+        padding-left: 1.35rem;
+        padding-right: 0.25rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        font-size: 12px;
+    }
+      
+}
+  
