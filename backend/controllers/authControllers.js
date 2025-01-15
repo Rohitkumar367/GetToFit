@@ -1,6 +1,7 @@
 
 
 import UserModel from "../models/userModel.js";
+import WishlistModel from "../models/userWishlist.js";
 import bcryptjs from 'bcryptjs'
 import crypto from 'crypto'
 import dotenv from 'dotenv'
@@ -208,7 +209,7 @@ export const resetPassword = async (req, res) => {
 
     } catch (error) {
         console.log("error in password reset", error);
-        res.status(400).json({success: false, message: error.message});   
+        res.status(400).json({success: false, message: error.message});
     }
 }
 
@@ -232,4 +233,94 @@ export const checkAuth = async (req, res) => {
     }
 }
 
+
+export const addToWishlist = async(req, res)=>{
+    try {
+        const {userId, route, exerciseName} = req.body;
+
+        let wishlist = await WishlistModel.findOne({userId})
+
+        if(!wishlist){
+            wishlist = new WishlistModel({
+                userId, 
+                routes: [{route, exerciseName}]
+            });
+        }
+        else{
+            const isRouteExists = wishlist.routes.some((r)=>r.route===route);
+
+            if (isRouteExists) {
+                return res.status(400).json({
+                    success: false,
+                    message: "This exercise is already in your wishlist."
+                });
+            }
+
+            wishlist.routes.push({ route, exerciseName });
+        }
+        
+        await wishlist.save();
+        
+        res.status(200).json({
+            success: true,
+            message: "Wishlist save successful",
+            wishlist: {
+                ...wishlist._doc,
+            }
+        })
+
+    } catch (error) {
+        console.log("error in saving wishlist", error);
+        res.status(400).json({success: false, message: error.message});   
+    }
+}
+
+export const getToWishlist = async(req, res)=>{
+    try {
+        const {userId} = req.params;
+
+        const wishlist = await WishlistModel.findOne({userId})
+
+        if(!wishlist){
+            return res.status(400).json({success: false, message: "Invalid or No data"})
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Wishlist fetch successful",
+            wishlist: {
+                ...wishlist._doc,
+            }
+        })
+
+    } catch (error) {
+        console.log("error in fetching wishlist", error);
+        res.status(400).json({success: false, message: error.message});   
+    }
+}
+
+export const deleteWishlist = async(req, res)=>{
+    try {
+        const {userId, route} = req.body;
+
+        const wishlist = await WishlistModel.findOne({userId})
+
+        if(wishlist){
+            wishlist.routes = wishlist.routes.filter((r)=> r.route!==route);
+            await wishlist.save();
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Wishlist delete successful",
+            wishlist: {
+                ...wishlist._doc,
+            }
+        })
+
+    } catch (error) {
+        console.log("error in deleting wishlist", error);
+        res.status(400).json({success: false, message: error.message});   
+    }
+}
 

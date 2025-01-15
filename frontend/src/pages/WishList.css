@@ -1,0 +1,56 @@
+.wishlist-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.wishlist-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.wishlist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.exercise-name {
+    flex: 1;
+    font-size: 16px;
+}
+
+.wishlist-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+
+.open-button {
+    background-color: #4caf50;
+    color: white;
+}
+
+.open-button:hover {
+    background-color: #45a049;
+}
+
+.remove-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.remove-button:hover {
+    background-color: #d32f2f;
+}

@@ -4,6 +4,8 @@ import axios from "axios"
 
 const API_URL = "http://localhost:5000/api/auth"
 
+const API_URL2 = "http://localhost:5000/api/user"
+
 axios.defaults.withCredentials = true;
 
 export const useAuthStore = create ((set) => ({
@@ -13,6 +15,7 @@ export const useAuthStore = create ((set) => ({
     isLoading: false,
     isCheckingAuth: true,
 	message: null,
+	wishlistData: [],
 
     signup: async (email, password, name) =>{
 		set({ isLoading: true, error: null });
@@ -92,5 +95,42 @@ export const useAuthStore = create ((set) => ({
 			throw error;
 		}
 	},
+
+	fetchWishlist: async (userId)=>{
+		set({isLoading: true, error: null});
+		try{
+			const response = await axios.get(`${API_URL2}/wishlist/${userId}`);
+			set({wishlistData: response.data.wishlist, isLoading: false});
+		}
+		catch(error){
+			set({isLoading: false, error: error.response.data.message || "Error fetching wishlist"});
+			throw error;
+		}
+	},
+
+	addToWishlist: async (userId, route, exerciseName)=>{
+		set({isLoading: true, error: null});
+		try{
+			const response = await axios.post(`${API_URL2}/wishlist`, {userId, route, exerciseName});
+			set({wishlistData: response.data.wishlist, isLoading: false});
+		}
+		catch(error){
+			set({isLoading: false, error: error.response.data.message || "Error saving wishlist"});
+			throw error;
+		}
+	},
+
+	removeFromWishlist: async (userId, route)=>{
+		set({isLoading: true, error: null});
+		try{
+			const response = await axios.delete(`${API_URL2}/wishlist`, {data: {userId, route}});
+			set({wishlistData: response.data.wishlist, isLoading: false});
+		}
+		catch(error){
+			set({isLoading: false, error: error.response.data.message || "Error deleting wishlist"});
+			throw error;
+		}
+	},
+
 }))
 
