@@ -27,6 +27,7 @@
 .exercise-name {
     flex: 1;
     font-size: 16px;
+    text-transform: capitalize;
 }
 
 .wishlist-button {

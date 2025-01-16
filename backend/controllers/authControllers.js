@@ -56,7 +56,7 @@ export const signup = async (req, res) => {
         })
 
     } catch (error) {
-        console.log("error during singup", error);
+        // console.log("error during singup", error);
         res.status(400).json({success: false, message: error.message});
     }
 }
@@ -97,7 +97,7 @@ export const verifyEmail = async (req, res) => {
         })
 
     } catch (error) {
-        console.log("error in verifyEmail", error);
+        // console.log("error in verifyEmail", error);
         res.status(500).json({success: false, message: error.message});   
     }
 }
@@ -137,7 +137,7 @@ export const login = async (req, res) => {
             }
         })        
     } catch (error) {
-        console.log("error in login", error);
+        // console.log("error in login", error);
         res.status(400).json({success: false, message: error.message});  
     }
 }
@@ -174,7 +174,7 @@ export const forgotPassword = async (req, res) => {
         res.status(200).json({success: true, message: "password reset link sent to your email"})
 
     } catch (error) {
-        console.log("error in forgotPassword", error);
+        // console.log("error in forgotPassword", error);
         res.status(400).json({success: false, message: error.message});   
     }
 }
@@ -208,7 +208,7 @@ export const resetPassword = async (req, res) => {
         res.status(200).json({success: true, message: "password reset successfully"})
 
     } catch (error) {
-        console.log("error in password reset", error);
+        // console.log("error in password reset", error);
         res.status(400).json({success: false, message: error.message});
     }
 }
@@ -228,7 +228,7 @@ export const checkAuth = async (req, res) => {
         })
 
     } catch (error) {
-        console.log("Error in checkAuth", error);
+        // console.log("Error in checkAuth", error);
         res.status(400).json({success: false, message: error.message});
     }
 }
@@ -270,7 +270,7 @@ export const addToWishlist = async(req, res)=>{
         })
 
     } catch (error) {
-        console.log("error in saving wishlist", error);
+        // console.log("error in saving wishlist", error);
         res.status(400).json({success: false, message: error.message});   
     }
 }
@@ -294,7 +294,7 @@ export const getToWishlist = async(req, res)=>{
         })
 
     } catch (error) {
-        console.log("error in fetching wishlist", error);
+        // console.log("error in fetching wishlist", error);
         res.status(400).json({success: false, message: error.message});   
     }
 }
@@ -319,7 +319,7 @@ export const deleteWishlist = async(req, res)=>{
         })
 
     } catch (error) {
-        console.log("error in deleting wishlist", error);
+        // console.log("error in deleting wishlist", error);
         res.status(400).json({success: false, message: error.message});   
     }
 }

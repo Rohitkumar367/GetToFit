@@ -4,6 +4,7 @@ import { exerciseOptions, fetchData } from '../utils/fetchData'
 import Parts from './Parts'
 import { useNavigate } from 'react-router-dom'
 import Spinner from './Spinner'
+import toast from 'react-hot-toast'
 
 
 const SearchExercises = ({bodyPart, setBodyPart, setChange}) => {
@@ -24,7 +25,7 @@ const SearchExercises = ({bodyPart, setBodyPart, setChange}) => {
                 setBodyParts(['all', ...bodyPartsData])
                 setIsLoading(false);
             } catch (error) {
-                window.alert("Unable to fetch data!, Request Limit Exceeded");
+                toast.error("Unable to fetch data!, Request Limit Exceeded");
                 navigate('/');
             }
         }

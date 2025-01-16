@@ -56,7 +56,8 @@ const EmailVerificationPage = () => {
             navigate("/");
             toast.success("Email verified successfully")
         } catch (error) {
-            console.log(error)
+            toast.error(error)
+            // console.log(error)
         }
     }
 
@@ -87,7 +88,7 @@ const EmailVerificationPage = () => {
 								value={digit}
 								onChange={(e) => handleChange(index, e.target.value)}
 								onKeyDown={(e) => handleKeyDown(index, e)}
-								className='w-12 h-12 text-center text-2xl font-bold bg-gray-700 text-white border-2 border-gray-600 rounded-lg focus:border-red-500 focus:outline-none'
+								className='w-10 h-10 text-center text-2xl font-bold bg-gray-700 text-white border-2 border-gray-600 rounded-lg focus:border-red-500 focus:outline-none'
 							/>
 						))}
                     </div>

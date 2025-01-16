@@ -3,6 +3,7 @@ import { useAuthStore } from '../store/authStore'
 import './WishList.css'
 import Spinner from '../components/Spinner'
 import { Link, useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 const WishList = () => {
     const {user, fetchWishlist, wishlistData, removeFromWishlist, error, isLoading} = useAuthStore();
@@ -15,7 +16,7 @@ const WishList = () => {
                 try {
                     await fetchWishlist(user._id)
                 } catch (e) {
-                    alert(error)
+                    toast.error(error);
                 }
             }
             else{
@@ -33,9 +34,10 @@ const WishList = () => {
     const handleRemoveFromWishlist = async (route)=>{
         try{
             await removeFromWishlist(user._id, route)
+            toast.error('Item removed from wishlist!')
         }
         catch(e){
-            alert(error)
+            toast.error(error)
         }
     }
 

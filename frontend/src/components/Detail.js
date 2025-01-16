@@ -4,6 +4,7 @@ import BodyPartImage from '../assets/icons/body-part.png';
 import TargetImage from '../assets/icons/target.png';
 import EquipmentImage from '../assets/icons/equipment.png';
 import { useAuthStore } from '../store/authStore';
+import toast from 'react-hot-toast';
 
 const Detail = ({exerciseDetail}) => {
     const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
@@ -11,9 +12,6 @@ const Detail = ({exerciseDetail}) => {
     let exerciseName = name;
 
     const {user, addToWishlist, error} = useAuthStore();
-
-    console.log(user);
-    console.log(window.location.pathname)
 
     const extraDetail=[
         {
@@ -35,11 +33,12 @@ const Detail = ({exerciseDetail}) => {
             const route = window.location.pathname;
             try {
                 await addToWishlist(user._id, route, exerciseName);
+                toast.success('Added to Wishlist!')
             } catch (e) {
-                alert(error)
+                toast.error(error);
             }
         }else{
-            alert("you need to log in to add to the wishlist")
+            toast.error('You are not logged in!')
         }
     }
 

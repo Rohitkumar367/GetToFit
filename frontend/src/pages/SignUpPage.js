@@ -5,6 +5,7 @@ import {User, Mail, Lock, Loader} from 'lucide-react'
 import { useAuthStore } from '../store/authStore';
 import "./SignUpPage.css"
 import standingGymMan from '../assets/images/standingGymMan.jpeg'
+import toast from 'react-hot-toast';
 
 const SignUpPage = () => {
 
@@ -21,7 +22,8 @@ const SignUpPage = () => {
             await signup(email, password, name);
             navigate("/verify-email")
         } catch (error) {
-            console.log(error)
+            // console.log(error)
+            toast.error(error);
         }
     }
 

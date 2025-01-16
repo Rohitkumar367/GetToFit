@@ -5,6 +5,7 @@ import standingGymMan from '../assets/images/standingGymMan.jpeg'
 import Input from "../components/Input";
 import { Mail, Lock, Loader } from "lucide-react";
 import "./LoginPage.css";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -18,8 +19,9 @@ const LoginPage = () => {
     try {
       await login(email, password);
       navigate("/");
+      toast.success('Logged in successfully!')
     } catch (error) {
-      console.log(error);
+      toast.error(error)
     }
   };
 

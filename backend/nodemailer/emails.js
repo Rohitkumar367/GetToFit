@@ -19,14 +19,14 @@ export const sendVerificationEmail =  async (userEmail, verificationToken) =>{
     
         transporter.sendMail(message, (err, info) => {
             if (err) {
-                console.log('Error occurred. ' + err.message);
+                // console.log('Error occurred. ' + err.message);
                 return process.exit(1);
             }
     
-            console.log('Email sent successfully', info.messageId);
+            // console.log('Email sent successfully', info.messageId);
         });
     } catch (error) {
-        console.log("Error sending verification", error);
+        // console.log("Error sending verification", error);
         throw new Error(`Error sending verification code: ${error}`)
     }
 
@@ -47,14 +47,14 @@ export const sendWelcomeEmail = async (userEmail, name) => {
     
         transporter.sendMail(message, (err, info) => {
             if (err) {
-                console.log('Error occurred. ' + err.message);
+                // console.log('Error occurred. ' + err.message);
                 return process.exit(1);
             }
     
-            console.log('Welcome email send successfully', info.messageId);
+            // console.log('Welcome email send successfully', info.messageId);
         });
     } catch (error) {
-        console.log("Error sending welcome email", error);
+        // console.log("Error sending welcome email", error);
         throw new Error(`Error sending welcome email: ${error}`)
     }
 }
@@ -75,14 +75,14 @@ export const sendPasswordResetEmail = async (userEmail, resetUrl) => {
     
         transporter.sendMail(message, (err, info) => {
             if (err) {
-                console.log('Error occurred. ' + err.message);
+                // console.log('Error occurred. ' + err.message);
                 return process.exit(1);
             }
     
-            console.log('password reset email send successfully', info.messageId);
+            // console.log('password reset email send successfully', info.messageId);
         });
     } catch (error) {
-        console.log("Error sending password reset email", error);
+        // console.log("Error sending password reset email", error);
         throw new Error(`Error sending password reset email: ${error}`)
     }
 }
@@ -103,14 +103,14 @@ export const sendResetSuccessEmail = async (userEmail) => {
     
         transporter.sendMail(message, (err, info) => {
             if (err) {
-                console.log('Error occurred. ' + err.message);
+                // console.log('Error occurred. ' + err.message);
                 return process.exit(1);
             }
     
-            console.log('password reset success email send successfully', info.messageId);
+            // console.log('password reset success email send successfully', info.messageId);
         });
     } catch (error) {
-        console.log("Error sending password reset success email", error);
+        // console.log("Error sending password reset success email", error);
         throw new Error(`Error sending password reset success email: ${error}`)
     }
 }

@@ -21,12 +21,12 @@ app.use(express.json());// global middleware, allows us to parse incoming reques
 app.use("/api/auth", authRoutes);// middleware handler on the path-> /api/auth
 app.use("/api/user", wishListRoutes);
 
-// if(process.env.NODE_ENV === "production"){
-//     app.use(express.static(path.join(__dirname, "/frontend/build")));
-//     app.get("*", (req, res) =>{
-//         res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-//     })
-// }
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, "/frontend/build")));
+    app.get("*", (req, res) =>{
+        res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+    })
+}
 
 app.listen(PORT, ()=>{
     connectDB();

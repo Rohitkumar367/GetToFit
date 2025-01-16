@@ -13,7 +13,7 @@ import LoginPage from './pages/LoginPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 import EmailVerificationPage from './pages/EmailVerificationPage'
-import { Toaster } from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 import Spinner from './components/Spinner'
 import WishList from './pages/WishList'
 
@@ -22,10 +22,12 @@ const ProtectedRoute = ({ children }) => {
 	const { isAuthenticated, user } = useAuthStore();
 
 	if (!isAuthenticated) {
+    toast.error('You are not logged in!');
 		return <Navigate to='/login' replace />;
 	}
 
 	if (!user.isVerified) {
+    toast.error('your email has not verified yet!')
 		return <Navigate to='/verify-email' replace />;
 	}
 
@@ -109,8 +111,13 @@ const App = () => {
           }
         />
 
+        <Route path='*' element={
+            <Navigate to='/' replace/>
+          }
+        />
+
       </Routes>
-      <Toaster/>
+      <Toaster position='top-right' reverseOrder={false}/>
     </BrowserRouter>
   )
 }
