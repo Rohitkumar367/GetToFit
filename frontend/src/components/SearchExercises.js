@@ -25,7 +25,7 @@ const SearchExercises = ({bodyPart, setBodyPart, setChange}) => {
                 setBodyParts(['all', ...bodyPartsData])
                 setIsLoading(false);
             } catch (error) {
-                toast.error("Unable to fetch data!, Request Limit Exceeded");
+                toast.error(error);
                 navigate('/');
             }
         }
