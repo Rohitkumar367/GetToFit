@@ -76,7 +76,8 @@ form {
 
 
 .error-message {
-    color: #ff4c4c;
+    color: #ffffff;
+    font-size: 12px;
     font-weight: bold;
     margin-bottom: 10px;
 }

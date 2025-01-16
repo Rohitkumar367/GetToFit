@@ -20,9 +20,8 @@ const LoginPage = () => {
       await login(email, password);
       navigate("/");
       toast.success('Logged in successfully!')
-    } catch (error) {
-      navigate("/login")
-      toast.error(error)
+    } catch (e) {
+      toast.error(error.message || "error Logging in");
     }
   };
 

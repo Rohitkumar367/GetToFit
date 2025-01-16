@@ -29,7 +29,7 @@ const ResetPasswordPage = () => {
             setTimeout(()=>{
                 navigate("/login");
             }, 2000);
-        } catch (error) {
+        } catch (e) {
             toast.error(error.message || "error resetting password");
         }   
     }
