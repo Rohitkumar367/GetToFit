@@ -19,7 +19,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setChange }) => {
         }
     }   
 
-    const imageUrl = `/images/${item}.jpeg`
+    const imageUrl = `/images/All.jpeg`
 
     return (
         <div
