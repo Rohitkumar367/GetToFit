@@ -13,13 +13,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 // const __dirname = path.resolve();
 
-app.use(cors({
-    origin: process.env.NODE_ENV === "production"
-        ? process.env.FRONTEND_URL
-        : `http://localhost:3000`,
-    credentials: true,
-}));
+// app.use(cors({
+//     origin: process.env.NODE_ENV === "production"
+//         ? process.env.FRONTEND_URL
+//         : `http://localhost:3000`,
+//     credentials: true,
+// }));
 
+app.use(cors());
     
 app.use(cookieParser()); // global middleware, allows us to parse incoming cookies
 app.use(express.json());// global middleware, allows us to parse incoming requests: req.body
