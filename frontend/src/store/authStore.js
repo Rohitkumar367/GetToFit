@@ -2,9 +2,13 @@
 import {create} from "zustand"
 import axios from "axios"
 
-const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:5000/api/auth" : "/api/auth"
+// const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:5000/api/auth" : "/api/auth"
 
-const API_URL2 = process.env.NODE_ENV === "development" ? "http://localhost:5000/api/user" : "/api/user"
+// const API_URL2 = process.env.NODE_ENV === "development" ? "http://localhost:5000/api/user" : "/api/user"
+
+const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:5000/api/auth" : `${process.env.REACT_APP_BACKEND_URL}/api/auth`;
+
+const API_URL2 = process.env.NODE_ENV === "development" ? "http://localhost:5000/api/user" : `${process.env.REACT_APP_BACKEND_URL}/api/user`;
 
 axios.defaults.withCredentials = true;
 
