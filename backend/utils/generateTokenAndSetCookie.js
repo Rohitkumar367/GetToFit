@@ -1,6 +1,5 @@
 
 import jwt from "jsonwebtoken";
-import { modelNames } from "mongoose";
 
 export const generateTokenAndSetCookie = (res, userId, userName) => {
 
