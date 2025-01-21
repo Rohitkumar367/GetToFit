@@ -25,6 +25,10 @@ app.use(cors());
 app.use(cookieParser()); // global middleware, allows us to parse incoming cookies
 app.use(express.json());// global middleware, allows us to parse incoming requests: req.body
 
+app.get("/", (req, res)=>{
+    res.send("hello mrddroid");
+})
+
 app.use("/api/auth", authRoutes);// middleware handler on the path-> /api/auth
 app.use("/api/user", wishListRoutes);
 
