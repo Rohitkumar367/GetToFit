@@ -7,6 +7,7 @@ import wishListRoutes from './routes/wishListRoutes.js'
 import cookieParser from 'cookie-parser';
 // import path from 'path'
 import cors from 'cors'
+import { getToWishlist } from './controllers/authControllers.js';
 
 dotenv.config();
 const app = express();
@@ -29,8 +30,10 @@ app.get("/", (req, res)=>{
     res.send("hello mrddroid");
 })
 
-app.use("/api/auth", authRoutes);// middleware handler on the path-> /api/auth
-app.use("/api/user", wishListRoutes);
+app.get("/wishlist/:userId", getToWishlist);
+
+// app.use("/api/auth", authRoutes);// middleware handler on the path-> /api/auth
+// app.use("/api/user", wishListRoutes);
 
 // if(process.env.NODE_ENV === "production"){
 //     app.use(express.static(path.join(__dirname, "/frontend/build")));
