@@ -19,7 +19,7 @@ const HomeParallax = () => {
                 }}
             ></ParallaxLayer>
 
-            {/* <ParallaxLayer offset={0} speed={-0.2}>
+            <ParallaxLayer offset={0} speed={-0.2}>
                 <div
                     className='border-part-fitnessGirl'
                 ></div>
@@ -29,7 +29,7 @@ const HomeParallax = () => {
                 <div
                     className='full-part-fitnessGirl'
                 ></div>
-            </ParallaxLayer> */}
+            </ParallaxLayer>
 
 
             <ParallaxLayer offset={0.05} speed={0.3}
