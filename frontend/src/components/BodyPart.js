@@ -26,7 +26,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setChange }) => {
             className={`bodyPart-card ${bodyPart === item ? 'active' : ''}`}
             onClick={handleSearch}
         >
-            <img src={imageUrl} alt="dumbbell" className="bodyPart-img" />
+            <img src={`/images/${item}.jpeg`} alt="dumbbell" className="bodyPart-img" />
             <p className="bodyPart-text">{item}</p>
         </div>
     );
