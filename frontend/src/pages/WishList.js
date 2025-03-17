@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useAuthStore } from '../store/authStore'
 import './WishList.css'
 import Spinner from '../components/Spinner'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 
 const WishList = () => {

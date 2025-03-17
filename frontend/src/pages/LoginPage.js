@@ -21,7 +21,7 @@ const LoginPage = () => {
       navigate("/");
       toast.success('Logged in successfully!')
     } catch (e) {
-      toast.error(error.message || "error Logging in");
+      toast.error(error?.message || "error Logging in");
     }
   };
 
