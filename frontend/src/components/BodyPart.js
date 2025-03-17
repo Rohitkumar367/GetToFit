@@ -19,14 +19,20 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setChange }) => {
         }
     }   
 
-    const imageUrl = `/images/All.jpeg`
+    const path=`${process.env.NODE_ENV==="development" ? "" : process.env.PUBLIC_URL}`
+    const imageUrl = `${path}/images/${item}.jpeg};`
 
     return (
         <div
             className={`bodyPart-card ${bodyPart === item ? 'active' : ''}`}
             onClick={handleSearch}
         >
-            <img src={`/images/${item}.jpeg`} alt="dumbbell" className="bodyPart-img" />
+            <img src={imageUrl} alt={`${item} exercise`} className="bodyPart-img" 
+                onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `${path}/images/all.jpeg`;
+                }}
+            />
             <p className="bodyPart-text">{item}</p>
         </div>
     );
