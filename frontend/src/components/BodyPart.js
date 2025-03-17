@@ -5,6 +5,21 @@ import { useNavigate } from 'react-router-dom';
 const BodyPart = ({ item, setBodyPart, bodyPart, setChange }) => {
     const navigate = useNavigate();
     
+    // Direct mapping to images in public folder
+    const imageUrls = {
+        all: '/images/all.jpeg',
+        back: '/images/back.jpeg',
+        cardio: '/images/cardio.jpeg',
+        chest: '/images/chest.jpeg',
+        'lower arms': '/images/lower%20arms.jpeg',
+        'lower legs': '/images/lower%20legs.jpeg',
+        neck: '/images/neck.jpeg',
+        shoulders: '/images/shoulders.jpeg',
+        'upper arms': '/images/upper%20arms.jpeg',
+        'upper legs': '/images/upper%20legs.jpeg',
+        waist: '/images/waist.jpeg'
+    };
+
     const handleSearch = async () =>  {
         setBodyPart(item);
         if(item){
@@ -19,9 +34,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setChange }) => {
         }
     }   
 
-    const path = `${process.env.NODE_ENV === "development" ? "" : process.env.REACT_APP_PUBLIC_URL}`;
-    const imageUrl = `${path}/images/${item}.jpeg`;
-
+    console.log(item);
 
     return (
         <div
@@ -29,7 +42,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setChange }) => {
             onClick={handleSearch}
         >
             <img 
-                src={imageUrl}
+                src={imageUrls[item]}
                 alt={`${item} exercise`} 
                 className="bodyPart-img"
             />
