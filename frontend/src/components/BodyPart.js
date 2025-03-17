@@ -7,17 +7,17 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setChange }) => {
     
     // Direct mapping to images in public folder
     const imageUrls = {
-        all: '/images/all.jpeg',
-        back: '/images/back.jpeg',
-        cardio: '/images/cardio.jpeg',
-        chest: '/images/chest.jpeg',
+        'all': '/images/all.jpeg',
+        'back': '/images/back.jpeg',
+        'cardio': '/images/cardio.jpeg',
+        'chest': '/images/chest.jpeg',
         'lower arms': '/images/lower%20arms.jpeg',
         'lower legs': '/images/lower%20legs.jpeg',
-        neck: '/images/neck.jpeg',
-        shoulders: '/images/shoulders.jpeg',
+        'neck': '/images/neck.jpeg',
+        'shoulders': '/images/shoulders.jpeg',
         'upper arms': '/images/upper%20arms.jpeg',
         'upper legs': '/images/upper%20legs.jpeg',
-        waist: '/images/waist.jpeg'
+        'waist': '/images/waist.jpeg'
     };
 
     const handleSearch = async () =>  {
