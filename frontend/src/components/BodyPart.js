@@ -22,6 +22,10 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setChange }) => {
     const path=`${process.env.NODE_ENV==="development" ? "" : process.env.PUBLIC_URL}`
     const imageUrl = `${path}/images/${item}.jpeg};`
 
+    console.log('image URL', imageUrl)
+    console.log('environment', process.env.NODE_ENV)
+    console.log('PUBLIC_URL', process.env.PUBLIC_URL)
+
     return (
         <div
             className={`bodyPart-card ${bodyPart === item ? 'active' : ''}`}
