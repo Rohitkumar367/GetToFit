@@ -25,3 +25,6 @@ GetToFit is a ReactJS-based web application designed to help users find and perf
 - **Styling**: CSS, TailwindCSS, Material UI
 
 ---
+
+### Login Page
+![Login alt](https://github.com/Rohitkumar367/GetToFit/main/frontend/public/login.png)
