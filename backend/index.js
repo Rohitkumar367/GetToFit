@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use(cors({
-    origin: process.env.CLIENT_URL,
+    origin: "https://get-to-fit-nfwu.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
 }));
