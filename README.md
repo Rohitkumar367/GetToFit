@@ -27,4 +27,36 @@ GetToFit is a ReactJS-based web application designed to help users find and perf
 ---
 
 ### Login Page
-![Login alt](https://github.com/Rohitkumar367/GetToFit/main/frontend/public/login.png)
+<img width="1906" height="967" alt="Image" src="https://github.com/user-attachments/assets/e6b6e833-6030-4147-a5b8-a6b874ab57b5" />
+
+---
+
+### Signup Page
+<img width="1917" height="969" alt="Image" src="https://github.com/user-attachments/assets/e285ce35-0f21-436d-ab6c-9891eb6117a4" />
+
+---
+
+### Home Page
+<img width="1919" height="973" alt="Image" src="https://github.com/user-attachments/assets/6b5ed771-8140-4ada-8d86-79641c91df5e" />
+
+---
+
+### Exercises Page
+<img width="1918" height="968" alt="Image" src="https://github.com/user-attachments/assets/f7252e62-b58c-402b-89fe-7246089ca385" />
+
+---
+
+### Exercise Page
+<img width="1919" height="970" alt="Image" src="https://github.com/user-attachments/assets/1610d8d6-8ae7-4ee7-bc45-170a220347c7" />
+
+---
+
+### Each Exercise Page
+<img width="1915" height="966" alt="Image" src="https://github.com/user-attachments/assets/fa6cfc27-3520-4ed8-8e50-f0e747046c33" />
+
+---
+
+### Wishlist Page
+<img width="1918" height="970" alt="Image" src="https://github.com/user-attachments/assets/6be64510-afa8-401d-975e-4de44869a3b9" />
+
+---
